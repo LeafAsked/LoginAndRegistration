@@ -2,11 +2,17 @@ package com.mistershorr.loginandregistration
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import com.backendless.Backendless
+import com.backendless.BackendlessUser
+import com.backendless.async.callback.AsyncCallback
+import com.backendless.exceptions.BackendlessFault
 import com.mistershorr.loginandregistration.databinding.ActivityLoginBinding
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,6 +38,31 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // register with backendless
+        Backendless.initApp(this, Constants.APP_ID, Constants.API_KEY)
+
+        binding.buttonLoginLogin.setOnClickListener {
+            Backendless.UserService.login(
+                binding.editTextLoginUsername.text.toString(),
+                binding.editTextLoginPassword.text.toString(),
+                object : AsyncCallback<BackendlessUser?> {
+                    override fun handleResponse(user: BackendlessUser?) {
+                        // successfully logged in
+                        Log.d(
+                            "LoginActivity", "handleresponse: ${user?.getProperty("username")} has logged in"
+                        )
+                        val registrationIntent = Intent(this@LoginActivity,
+                            SleepListActivity::class.java)
+                        startRegistrationForResult.launch(registrationIntent)
+                    }
+
+                    override fun handleFault(fault: BackendlessFault) {
+                        // login failed, to get the error code call fault.getCode()
+                        Log.d("LoginActivity", "handleFault: ${fault.message}")
+                    }
+                })
+        }
 
         // launch the Registration Activity
         binding.textViewLoginSignup.setOnClickListener {

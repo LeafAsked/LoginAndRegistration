@@ -1,5 +1,7 @@
 package com.mistershorr.loginandregistration
 
+import android.widget.Toast
+
 // object keyword makes it so all the functions are
 // static functions
 object RegistrationUtil {
@@ -17,7 +19,6 @@ object RegistrationUtil {
     // minimum number of characters is 3
     fun validateUsername(username: String) : Boolean {
         return true
-
     }
 
     // make sure meets security requirements (deprecated ones that are still used everywhere)
@@ -30,22 +31,45 @@ object RegistrationUtil {
         if(password.length < 8 || confirmPassword.length < 8) {
             return false
         }
-
         password.count { it.isDigit() } > 0
-
         return true
     }
 
     // isn't empty
     fun validateName(name: String) : Boolean {
+        if (name.equals("")) {
+            return false
+        }
         return true
-
     }
 
     // isn't empty
     // make sure the email isn't used
     // make sure it's in the proper email format user@domain.tld
     fun validateEmail(email: String) : Boolean {
+        if (email.isEmpty()) {
+            return false
+        }
+        if (!email.contains(Regex("@"))) {
+            return false
+        }
+        if (email.contains(Regex("."))) {
+            if (email.indexOf("@") > email.indexOf(".")) {
+                return false
+            }
+        }
+        else {
+            return false
+        }
+        if (!email.substring(0, email.indexOf("@")).contains(Regex("[A-Z && a-z]"))) {
+            return false
+        }
+        if (!email.substring(email.indexOf("@"), email.indexOf(".")).contains(Regex("[A-Z && a-z]"))) {
+            return false
+        }
+        if (!email.substring(email.indexOf(".")).contains(Regex("[A-Z && a-z]"))) {
+            return false
+        }
         return true
     }
 }

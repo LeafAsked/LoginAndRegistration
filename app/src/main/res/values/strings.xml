@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginAndRegistration</string>
+    <string name="app_name">Sleepr</string>
     <string name="sign_up">Sign Up</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -8,4 +8,14 @@
     <string name="name">Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
+    <string name="bedtime">Bedtime</string>
+    <string name="wake_time">Wake Time</string>
+    <string name="date">Date</string>
+    <string name="sleep_quality">Sleep Quality</string>
+    <string name="notes">Notes</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="sort_by_hours_slept">Sort by Hours Slept</string>
+    <string name="sort_by_quality">Sort by Quality</string>
+    <string name="show_hide_friends">Show/Hide Friends</string>
 </resources>

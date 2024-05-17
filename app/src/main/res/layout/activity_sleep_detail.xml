@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SleepDetailActivity">
+
+    <Button
+        android:id="@+id/button_sleepDetail_bedTime"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_sleepDetail_bedTimeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_sleepDetail_bedTimeLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_sleepDetail_bedTimeLabel" />
+
+    <Button
+        android:id="@+id/button_sleepDetail_wakeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_sleepDetail_wakeTimeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_sleepDetail_wakeTimeLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_sleepDetail_wakeTimeLabel" />
+
+    <Button
+        android:id="@+id/button_sleepDetail_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_sleepDetail_dateLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_sleepDetail_dateLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_sleepDetail_dateLabel" />
+
+    <RatingBar
+        android:id="@+id/ratingBar_sleepDetail_quality"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize=".5"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_sleepDetail_qualityLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_sleepDetail_qualityLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_sleepDetail_qualityLabel" />
+
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine_sleepDetail_notes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_sleepDetail_notesLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_sleepDetail_notesLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_sleepDetail_notesLabel" />
+
+
+    <Button
+        android:id="@+id/button_sleepDetail_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_sleepDetail_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine_sleepDetail_notes"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/button_sleepDetail_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_sleepDetail_save"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine_sleepDetail_notes"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+
+    <TextView
+        android:id="@+id/textView_sleepDetail_wakeTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wake_time"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/textView_sleepDetail_dateLabel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sleepDetail_bedTimeLabel" />
+
+    <TextView
+        android:id="@+id/textView_sleepDetail_dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        app:layout_constraintBottom_toTopOf="@+id/textView_sleepDetail_qualityLabel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sleepDetail_wakeTimeLabel" />
+
+    <TextView
+        android:id="@+id/textView_sleepDetail_bedTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bedtime"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/textView_sleepDetail_qualityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sleep_quality"
+        app:layout_constraintBottom_toTopOf="@+id/textView_sleepDetail_notesLabel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sleepDetail_dateLabel" />
+
+    <TextView
+        android:id="@+id/textView_sleepDetail_notesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notes"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="48dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
